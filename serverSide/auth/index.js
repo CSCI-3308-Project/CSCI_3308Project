@@ -58,6 +58,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+  console.log(req.body);
   if(validUser(req.body)) {
     User
       .getOneByEmail(req.body.email)
@@ -71,25 +72,25 @@ router.post('/login', (req, res, next) => {
             // if the passwords matched
             if (result) {
               // setting the 'set-cookie' header
-              const isSecure = req.app.get('env') != 'development';
+              // const isSecure = req.app.get('env') != 'development';
               res.cookie('user_id', user.id, {
                 httpOnly: true,
-                signed: isSecure,
-                secure: true
+                signed: true,
+                secure: false
               });
               res.json({
                 message: 'Logged in! 🔓'
               });
             } else {
-              next(new Error('Invalid login'));
+              next(new Error('Invalid login1'));
             }
           });
         } else {
-          next(new Error('Invalid login'));
+          next(new Error('Invalid login2'));
         }
       });
   } else {
-    next(new Error('Invalid login'));
+    next(new Error('Invalid login3'));
   }
 });
 

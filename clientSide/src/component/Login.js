@@ -3,13 +3,17 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import axios from 'axios';
 import './auth.css'
 
-class SignUp extends React.Component {
+var loginAxios = axios.create({
+  withCredentials: true,
+  crossDomain: true
+});
+
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
       email: "",
       password: "",
-      confirm_password: ""
     };
   }
 
@@ -19,10 +23,6 @@ class SignUp extends React.Component {
 
   handleChange = event => {
     this.setState({ [event.target.type]: event.target.value });
-  }
-
-  isConfirmedPassword = event => {
-  return (event === this.state.password)
   }
 
   handleSubmit = event => {
@@ -35,7 +35,7 @@ class SignUp extends React.Component {
 
     console.log(user);
 
-    axios.post(`http://localhost:8000/auth/signup`, user)
+    loginAxios.post(`http://localhost:8000/auth/login`, user)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -47,8 +47,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="SignUp">
-        <h1 className="SignUp_Banner">Lets get you signed up!</h1>
+      <div className="Login">
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">
               <ControlLabel>email</ControlLabel>
@@ -64,20 +63,13 @@ class SignUp extends React.Component {
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
-            <FormGroup controlId="confirm_password" bsSize="large">
-              <ControlLabel>confirm password</ControlLabel>
-              <FormControl autoFocus type="password"
-                defaultValue={this.state.confirm_password}
-                onChange={this.handleChange.bind(this)}
-                />
-            </FormGroup>
             <Button
               block
               bsSize="large"
               disabled={!this.validateForm()}
               type='submit'
             >
-              Sign up!
+              Login!
             </Button>
           </form>
       </div>
@@ -85,4 +77,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default Login;
