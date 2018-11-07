@@ -24,5 +24,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "object-assign": "^4.1.1",
+    "scheduler": "^0.11.0"
+  }
 }
