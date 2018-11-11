@@ -11,7 +11,7 @@ class Landing extends React.Component {
         	allow students to better their learning efficiency by studying as a collective. Study Buddies 
         	will allow you to meet up with students in the real world who are working on the same classes as you are. 
         	Our aim is to bridge the gap between students in CSCI at CU Boulder who need help on assignments but
-        	are unwilling to reach out to each other. 
+        	are unwilling to reach out to each other for help. 
         	</h1> 
       	</div> 
       </div>
