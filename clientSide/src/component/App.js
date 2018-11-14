@@ -8,6 +8,7 @@ import Login from './Login';
 //import Homepage from './Homepage';
 import home from './home'; 
 import profile from './profile'; 
+import Landing from './Landing'; 
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/home" component={home} />
             <Route path="/profile" component={profile} />
+	    <Route path="/" component={Landing} /> 
             <Route component={Error} />
           </Switch>
 
