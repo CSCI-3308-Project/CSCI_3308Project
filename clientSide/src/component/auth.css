@@ -1,6 +1,8 @@
 @media all and (min-width: 480px) {
   .SignUp {
+    color: white;
     padding: 60px 0;
+    background-image: url("https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=road-landscape-mountains-67517.jpg&fm=jpg");
   }
 
   .SignUp form {
@@ -8,7 +10,22 @@
     max-width: 320px;
   }
 
+
+  .LoginBody{
+    margin-top: 20px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .btn{
+    color: white;
+    background-color: lightblue;
+  }
+
   .Login {
+    color: white;
+    background-image: url("https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=road-landscape-mountains-67517.jpg&fm=jpg");
     padding: 60px 0;
   }
 
@@ -17,8 +34,9 @@
     max-width: 320px;
   }
 
-  .SignUp_Banner {
+  .SignUp_Banner{
     padding: 10px;
     text-align: center;
   }
+
 }

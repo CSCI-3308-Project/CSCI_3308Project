@@ -50,20 +50,20 @@ class Login extends React.Component {
       <div className="Login">
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>email</ControlLabel>
+              <ControlLabel>Email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-              <ControlLabel>password</ControlLabel>
+              <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
-            <Button
+            <Button className = "btn"
               block
               bsSize="large"
               disabled={!this.validateForm()}
@@ -72,7 +72,11 @@ class Login extends React.Component {
               Login!
             </Button>
           </form>
+      <div className = "LoginBody"> 
+        <h1> Study Buddies is dedicated to bettering your student experience! </h1> 
+      </div> 
       </div>
+
     )
   }
 }
