@@ -25,12 +25,12 @@ class home extends React.Component {
         color = "white"
         >
         <h1>
-           <center>Welcome to Studdy Buddies </center>
+           <center>Welcome to Study Buddies </center>
           </h1>
         </Element>
         
 
-   	<p> Here you may check in to Studdy Buddies and start studdying with other students on the classes you need help in! Just indicate your areas of interest and availability below: </p>
+   	<p> Here you may check in to Studdy Buddies and start studying with other students on the classes you need help in! Just indicate your areas of interest and availability below: </p>
         <div>&nbsp;</div>
 
        <form> 
