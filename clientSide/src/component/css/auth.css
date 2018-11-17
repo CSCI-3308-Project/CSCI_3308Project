@@ -10,6 +10,14 @@
     max-width: 320px;
   }
 
+  .SignUp .basic-multi-select {
+    color: black;
+  }
+
+  .SignUp .Submit {
+    margin: 20px 0;
+  }
+
 
   .LoginBody{
     margin-top: 20px;

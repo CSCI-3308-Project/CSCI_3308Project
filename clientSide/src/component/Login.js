@@ -1,12 +1,24 @@
 import React from 'react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import axios from 'axios';
-import './auth.css'
+import './css/auth.css'
 
 var loginAxios = axios.create({
   withCredentials: true,
   crossDomain: true
 });
+
+const fakeAuth = {
+  isAuthenticated: true,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100); //fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100)
+  }
+}
 
 class Login extends React.Component {
   constructor() {
@@ -14,6 +26,7 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
+      redirectToReferrer: false
     };
   }
 
@@ -33,19 +46,27 @@ class Login extends React.Component {
       password: this.state.password
     };
 
-    console.log(user);
-
     loginAxios.post(`http://localhost:8000/auth/login`, user)
       .then(res => {
         console.log(res);
-        console.log(res.data);
+        //console.log(res.data);
       })
       .catch(error => {
         console.error(error.response.data);
       });
-}
+  }
+
+  login = () => {
+    fakeAuth.authenticate(() => {
+      this.setState(() => ({
+        redirectToReferrer: true
+      }))
+    })
+  }
 
   render() {
+    const { redirectToReferrer } = this.state
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
     return (
       <div className="Login">
           <form onSubmit={this.handleSubmit}>
@@ -72,9 +93,9 @@ class Login extends React.Component {
               Login!
             </Button>
           </form>
-      <div className = "LoginBody"> 
-        <h1> Study Buddies is dedicated to bettering your student experience! </h1> 
-      </div> 
+        <div className = "LoginBody">
+          <h1> Study Buddies is dedicated to bettering your student experience! </h1>
+        </div>
       </div>
 
     )

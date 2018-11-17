@@ -34,6 +34,7 @@ router.post('/signup', (req, res, next) => {
               const user = {
                 email: req.body.email,
                 password: hash,
+                user_courses: req.body.courses,
                 created_at: new Date()
               };
 
@@ -82,15 +83,15 @@ router.post('/login', (req, res, next) => {
                 message: 'Logged in! 🔓'
               });
             } else {
-              next(new Error('Invalid login1'));
+              next(new Error('Invalid Password'));
             }
           });
         } else {
-          next(new Error('Invalid login2'));
+          next(new Error('Email is not in system'));
         }
       });
   } else {
-    next(new Error('Invalid login3'));
+    next(new Error('Email or Password were typed incorrectly'));
   }
 });
 

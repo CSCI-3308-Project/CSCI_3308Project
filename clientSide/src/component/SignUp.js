@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import axios from 'axios';
-import './auth.css'
+import Select from 'react-select';
+
+import './css/auth.css'
+import { courseData } from './courseData';
 
 class SignUp extends React.Component {
   constructor() {
@@ -9,8 +12,12 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
-      confirm_password: ""
-    };
+      confirm_password: "",
+      selectedCourses: null,
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleMultiChange = this.handleMultiChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   validateForm() {
@@ -21,6 +28,15 @@ class SignUp extends React.Component {
     this.setState({ [event.target.type]: event.target.value });
   }
 
+  handleMultiChange = event => {
+    this.setState(state => {
+      return {
+        selectedCourses: event
+      };
+    });
+    console.log(this.state.selectedCourses);
+  }
+
   isConfirmedPassword = event => {
   return (event === this.state.password)
   }
@@ -28,9 +44,17 @@ class SignUp extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    var parsedCourses = {};
+    for (var i = 0; i < this.state.selectedCourses.length; i++) {
+      var keyValue = "course_" + (i + 1);
+      parsedCourses[keyValue] = this.state.selectedCourses[i].value;
+    }
+    console.log(parsedCourses);
+
     const user = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      courses: parsedCourses
     };
 
     console.log(user);
@@ -69,9 +93,18 @@ class SignUp extends React.Component {
               <FormControl autoFocus type="password"
                 defaultValue={this.state.confirm_password}
                 onChange={this.handleChange.bind(this)}
-                />
+              />
             </FormGroup>
+              <ControlLabel>current courses</ControlLabel>
+              <Select
+                isMulti
+                options={courseData}
+                className="basic-multi-select"
+                value={ this.state.selectedCourses }
+                onChange={this.handleMultiChange}
+              />
             <Button
+              className="Submit"
               block
               bsSize="large"
               disabled={!this.validateForm()}
