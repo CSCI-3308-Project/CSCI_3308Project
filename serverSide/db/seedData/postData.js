@@ -1,122 +1,122 @@
-export const posts = [
+module.exports = [
   {
-    post_id: 1,
+    user_id: 1,
     course: "CSCI_2270",
     location: "CSEL",
     note: "I need help with red / black trees!"
   },
   {
-    post_id: 2,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 2,
+    course: "CSCI_1300",
+    location: "NORLIN",
+    note: "Working on the Hunger Games project"
   },
   {
-    post_id: 3,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 3,
+    course: "CSCI_2400",
+    location: "DLC",
+    note: "Bomb Lab"
   },
   {
-    post_id: 4,
-    course: "CSCI_2270",
+    user_id: 4,
+    course: "CSCI_2824",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Working on quiz due tomorrow"
   },
   {
-    post_id: 5,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 5,
+    course: "CSCI_1300",
+    location: "MATH",
+    note: "Looking for study partner for midterm"
   },
   {
-    post_id: 6,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 6,
+    course: "CSCI_1000",
+    location: "NORLIN",
+    note: "Do I really want to do this?"
   },
   {
-    post_id: 7,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 7,
+    course: "CSCI_2820",
+    location: "MATH",
+    note: "HW on span, basis, and rank"
   },
   {
-    post_id: 8,
-    course: "CSCI_2270",
+    user_id: 8,
+    course: "CSCI_3308",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Can someone explain REGEX to me!"
   },
   {
-    post_id: 9,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 9,
+    course: "CSCI_2400",
+    location: "DLC",
+    note: "Working through greedy Algorithms"
   },
   {
-    post_id: 10,
-    course: "CSCI_2270",
+    user_id: 10,
+    course: "CSCI_2400",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Looking for study group for midterm"
   },
   {
-    post_id: 11,
-    course: "CSCI_2270",
+    user_id: 11,
+    course: "CSCI_3308",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Project Help: Database integration"
   },
   {
-    post_id: 12,
+    user_id: 12,
     course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    location: "MATH",
+    note: "Lets figure out what pointers are!"
   },
   {
-    post_id: 13,
-    course: "CSCI_2270",
+    user_id: 13,
+    course: "CSCI_1300",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Final Project: Way over my head"
   },
   {
-    post_id: 14,
+    user_id: 14,
     course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    location: "MATH",
+    note: "Hash Tables?"
   },
   {
-    post_id: 15,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 15,
+    course: "CSCI_2400",
+    location: "DLC",
+    note: "Working on this weeks reading quiz! Get at me."
   },
   {
-    post_id: 16,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 16,
+    course: "CSCI_4302",
+    location: "DLC",
+    note: "Come suffer with me."
   },
   {
-    post_id: 17,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 17,
+    course: "CSCI_3020",
+    location: "MATH",
+    note: "Working on this weeks homework, buddy?"
   },
   {
-    post_id: 18,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 18,
+    course: "CSCI_4809",
+    location: "DLC",
+    note: "Didn't go to class yesterday, anyone wanna review?"
   },
   {
-    post_id: 19,
-    course: "CSCI_2270",
+    user_id: 19,
+    course: "CSCI_2400",
     location: "CSEL",
-    note: "I need help with red / black trees!"
+    note: "Bomb Lab: Extra Credit"
   },
   {
-    post_id: 20,
-    course: "CSCI_2270",
-    location: "CSEL",
-    note: "I need help with red / black trees!"
+    user_id: 20,
+    course: "CSCI_3202",
+    location: "NORLIN",
+    note: "Stuck on HW, hanging in the fish bowl"
   }
 ]
