@@ -84,7 +84,7 @@ class Login extends React.Component {
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
-            <Button className = "btn"
+            <Button className = "loginBtn"
               block
               bsSize="large"
               disabled={!this.validateForm()}

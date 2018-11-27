@@ -18,17 +18,20 @@
     margin: 20px 0;
   }
 
-
-  .LoginBody{
+  .LoginBody {
     margin-top: 20px;
     padding: 40px;
     color: white;
     text-align: center;
   }
 
-  .btn{
+  .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
+    opacity: 0.9;
+  }
+
+  .loginBtn {
     color: white;
-    background-color: lightblue;
+    background-color: #3c9bc5;
   }
 
   .Login {
