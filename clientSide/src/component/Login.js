@@ -1,33 +1,27 @@
 import React from 'react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import axios from 'axios';
+
+import AuthService from './AuthService';
 import './css/auth.css'
 
-var loginAxios = axios.create({
-  withCredentials: true,
-  crossDomain: true
-});
-
-const fakeAuth = {
-  isAuthenticated: true,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100); //fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
 
 class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       password: "",
-      redirectToReferrer: false
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.Auth = new AuthService();
+  }
+
+  componentDidMount() {
+    if(this.Auth.loggedIn()) {
+
+      this.props.history.replace('/home');
+    }
   }
 
   validateForm() {
@@ -41,47 +35,37 @@ class Login extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const user = {
-      email: this.state.email,
-      password: this.state.password
-    };
-
-    loginAxios.post(`http://localhost:8000/auth/login`, user)
+    this.Auth.login(this.state.email, this.state.password)
       .then(res => {
-        console.log(res);
-        //console.log(res.data);
+        this.props.handleLogin();
       })
-      .catch(error => {
-        console.error(error.response.data);
-      });
+      .then(res => {
+        this.props.history.replace('/home');
+      })
+      .catch(err => {
+          alert(err);
+      })
   }
 
-  login = () => {
-    fakeAuth.authenticate(() => {
-      this.setState(() => ({
-        redirectToReferrer: true
-      }))
-    })
-  }
 
   render() {
-    const { redirectToReferrer } = this.state
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const imgSrc = "https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=road-landscape-mountains-67517.jpg&fm=jpg";
     return (
       <div className="Login">
+        <img src={imgSrc} className="bg" alt="Mountains with road"/>
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>Email</ControlLabel>
+              <ControlLabel>email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
                 />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-              <ControlLabel>Password</ControlLabel>
+              <ControlLabel>password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
                 />
             </FormGroup>
             <Button className = "loginBtn"
@@ -94,7 +78,7 @@ class Login extends React.Component {
             </Button>
           </form>
         <div className = "LoginBody">
-          <h1> Study Buddies is dedicated to bettering your student experience! </h1>
+          <h2> “Two roads diverged in a wood, and I – I took the one less traveled by.” -Robert Frost </h2>
         </div>
       </div>
 

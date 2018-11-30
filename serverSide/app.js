@@ -1,15 +1,15 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var routes = require('./routes/index');
-var user = require('./routes/user')
+var user = require('./routes/user');
 var auth = require('./auth/index');
+var data = require('./data/index');
 
 var app = express();
 
@@ -22,10 +22,9 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
   origin: 'http://localhost:3000',
@@ -35,6 +34,7 @@ app.use(cors({
 app.use('/auth', auth);
 app.use('/', routes);
 app.use('/user', user);
+app.use('/data', data);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,54 +1,57 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+//import SimpleStorage from "react-simple-storage";
+
+import AuthService from './AuthService';
 
 import SignUp from './SignUp';
 import TopNav from './TopNav';
 import Error from './Error';
 import Login from './Login';
-//import Homepage from './Homepage';
 import Home from './Home';
-import Profile from './Profile';
 import Landing from './Landing';
 
-
-const fakeAuth = {
-  isAuthenticated: true,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100); //fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
-
-
-const ProtectedRoute = ({component: Component, ...rest}) => (
-  <Route {...rest} render={(props) => (
-    fakeAuth.isAuthenticated === true
-    ? <Component {...props} />
-    : <Redirect to={{
-      pathname: "/login",
-      state: { from: props.location }
-    }}/>
-  )}/>
-)
-
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false,
+      isLoaded: false
+    };
+    this.Auth = new AuthService();
+    this.handleLogin = this.handleLogin.bind();
+  }
+
+  componentDidMount() {
+    if (this.Auth.loggedIn()) {
+        this.setState({loggedIn: true});
+    }
+    else {
+        this.setState({loggedIn: false});
+    }
+  }
+
+  handleLogin = event => {
+    localStorage.setItem("profile", JSON.stringify(this.Auth.getProfile()));
+    this.setState({loggedIn: true,
+                   isLoaded: true
+      });
+  }
+
+  handleLogout = event => {
+    this.Auth.logout();
+    this.setState({loggedIn: false});
+  }
+
   render() {
     return (
       <BrowserRouter>
-
         <div>
-
-          <TopNav />
+          <TopNav loggedIn={this.state.loggedIn} handleLogout={this.handleLogout} />
           <Switch>
-            <Route path="/register" component={SignUp} />
-            <Route path="/login" component={Login} />
-            <ProtectedRoute path="/home" component={Home} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
+            <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
+            <Route path="/home" render= {(props) => <Home {...props} isLoaded={this.state.isLoaded} />} />
 	          <Route path="/" component={Landing} />
             <Route component={Error} />
           </Switch>

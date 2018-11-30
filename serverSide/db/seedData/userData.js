@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 module.exports = [
   {
     email: 'foobar@gmail.com',
-    password: bcrypt.hashSync('pineapple',10),
+    password: bcrypt.hashSync('pineapple', 10),
     user_courses: {
       course_1: "CSCI_1300",
       course_2: "CSCI_2270"
