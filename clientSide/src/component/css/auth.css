@@ -24,7 +24,7 @@
   .LoginBody {
     margin-top: 20px;
     padding: 40px;
-    color: white;
+    color: white; 
     text-align: center;
   }
 
@@ -40,6 +40,7 @@
   .Login {
     padding: 120px 0;
   }
+
 
   /* Full page responsive background image */
   img.bg {
@@ -60,7 +61,7 @@
 
   .Login form {
     margin: 0 auto;
-    color: black;
+    color: white;
     max-width: 320px;
   }
 
