@@ -29,6 +29,9 @@ class TopNav extends Component {
             <NavItem eventKey={4} componentClass={Link} href="/profile" to="/profile">
               Profile
             </NavItem>
+            <NavItem eventKey={5} componentClass={Link} href="/message" to="/message">
+              Chat
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

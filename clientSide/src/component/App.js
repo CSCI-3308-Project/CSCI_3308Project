@@ -9,7 +9,7 @@ import Login from './Login';
 import Home from './Home';
 import Profile from './Profile';
 import Landing from './Landing';
-
+import Message from './Message';
 
 const fakeAuth = {
   isAuthenticated: true,
@@ -35,20 +35,17 @@ const ProtectedRoute = ({component: Component, ...rest}) => (
   )}/>
 )
 
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-
         <div>
-
-          <TopNav />
+          <TopNav loggedIn={this.state.loggedIn} handleLogout={this.handleLogout} />
           <Switch>
-            <Route path="/register" component={SignUp} />
-            <Route path="/login" component={Login} />
-            <ProtectedRoute path="/home" component={Home} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
+            <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
+            <Route path="/home" render= {(props) => <Home {...props} isLoaded={this.state.isLoaded} />} />
+            <Route path="/message" render= {(props) => <Message {...props} handlemessage={this.state.handlemessage} />}>
 	          <Route path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
