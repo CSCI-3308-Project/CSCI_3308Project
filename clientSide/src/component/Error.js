@@ -4,7 +4,8 @@ const Error = () => {
   return (
     <div>
 
-      <p> Error: This shit does not exist bro! </p>
+
+      <p> Error: 404: Page Not Found </p>
     </div>
   );
 };
