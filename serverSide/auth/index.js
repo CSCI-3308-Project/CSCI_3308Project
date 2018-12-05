@@ -27,7 +27,6 @@ router.post('/signup', (req, res, next) => {
     User
       .getOneByEmail(req.body.email)
       .then(user => {
-        console.log('user', user);
         // if user not found
         if(!user) {
           // this is a unique Email
@@ -50,8 +49,7 @@ router.post('/signup', (req, res, next) => {
                     message: '✅'
                   });
                 });
-              // redirect
-        });
+            });
         } else {
           //email in use!
           next(new Error('Email in use'));
@@ -63,12 +61,10 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-  console.log(req.body);
   if(validUser(req.body)) {
     User
       .getOneByEmail(req.body.email)
       .then(user => {
-        console.log('user', user);
         if(user) {
           // compare password with hashed password
           bcrypt

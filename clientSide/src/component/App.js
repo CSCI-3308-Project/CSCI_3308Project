@@ -52,7 +52,7 @@ class App extends Component {
             <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
             <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
             <Route path="/home" render= {(props) => <Home {...props} isLoaded={this.state.isLoaded} />} />
-	          <Route path="/" component={Landing} />
+	          <Route exact path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
 

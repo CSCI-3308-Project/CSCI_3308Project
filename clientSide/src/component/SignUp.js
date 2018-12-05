@@ -14,7 +14,7 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       confirm_password: "",
-      selectedCourses: null,
+      selectedCourses: [],
     }
     this.Auth = new AuthService();
     this.handleChange = this.handleChange.bind(this);
