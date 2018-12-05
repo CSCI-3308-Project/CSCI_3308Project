@@ -85,27 +85,27 @@ class SignUp extends React.Component {
         <h1 className="SignUp_Banner">Lets get you signed up!</h1>
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>email</ControlLabel>
+              <ControlLabel>Email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-              <ControlLabel>password</ControlLabel>
+              <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
             <FormGroup controlId="confirm_password" bsSize="large">
-              <ControlLabel>confirm password</ControlLabel>
+              <ControlLabel>Confirm password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.confirm_password}
                 onChange={this.handleChange.bind(this)}
               />
             </FormGroup>
-              <ControlLabel>current courses</ControlLabel>
+              <ControlLabel>Current courses</ControlLabel>
               <Select
                 isMulti
                 options={courseData}

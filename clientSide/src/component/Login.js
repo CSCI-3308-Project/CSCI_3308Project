@@ -55,14 +55,14 @@ class Login extends React.Component {
         <img src={imgSrc} className="bg" alt="Mountains with road"/>
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>email</ControlLabel>
+              <ControlLabel>Email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
                 onChange={this.handleChange}
                 />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-              <ControlLabel>password</ControlLabel>
+              <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
                 onChange={this.handleChange}
