@@ -1,5 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
+var exjwt = require('express-jwt');
 const router = express.Router();
 
 const User = require('../db/user');
@@ -12,10 +14,12 @@ function validUser(user) {
   return validEmail && validPassword;
 }
 
-router.get('/', (req, res) => {
-  res.json({
-    message: '🔐'
-  });
+const jwtMW = exjwt({
+    secret: 'secretkey'
+});
+
+router.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
+    res.send('You are authenticated'); //Sending some response when authenticated
 });
 
 router.post('/signup', (req, res, next) => {
@@ -72,15 +76,10 @@ router.post('/login', (req, res, next) => {
           .then((result) => {
             // if the passwords matched
             if (result) {
-              // setting the 'set-cookie' header
-              // const isSecure = req.app.get('env') != 'development';
-              res.cookie('user_id', user.id, {
-                httpOnly: true,
-                signed: true,
-                secure: false
-              });
-              res.json({
-                message: 'Logged in! 🔓'
+              jwt.sign({user}, 'secretkey', { expiresIn: 129600 }, (err, token) => {
+                res.json({
+                  token
+                });
               });
             } else {
               next(new Error('Invalid Password'));

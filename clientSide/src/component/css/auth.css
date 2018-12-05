@@ -1,12 +1,15 @@
 @media all and (min-width: 480px) {
   .SignUp {
-    color: white;
-    padding: 60px 0;
-    background-image: url("https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=road-landscape-mountains-67517.jpg&fm=jpg");
+    padding: 40px 0;
+  }
+
+  .SignUp_Banner {
+    color: black;
   }
 
   .SignUp form {
     margin: 0 auto;
+    color: white;
     max-width: 320px;
   }
 
@@ -26,7 +29,7 @@
   }
 
   .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
-    opacity: 0.9;
+    opacity: 1;
   }
 
   .loginBtn {
@@ -35,13 +38,29 @@
   }
 
   .Login {
-    color: white;
-    background-image: url("https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=road-landscape-mountains-67517.jpg&fm=jpg");
-    padding: 60px 0;
+    padding: 120px 0;
+  }
+
+  /* Full page responsive background image */
+  img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 
   .Login form {
     margin: 0 auto;
+    color: black;
     max-width: 320px;
   }
 

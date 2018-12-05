@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import './css/TopNav.css';
 
 class TopNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: null
+    }
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (localStorage.getItem("profile") !== null) {
+      const profile = JSON.parse(localStorage.getItem("profile"));
+      if (this.state.email !== profile.user.email) {
+          this.setState({email: profile.user.email})
+      }
+    }
+  }
+
+  handleLogout() {
+     this.props.handleLogout();
+     this.props.history.replace('/login');
+  }
+
   render () {
     return (
       <Navbar inverse collapseOnSelect>
@@ -15,23 +37,44 @@ class TopNav extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
+          {(this.props.loggedIn) ?
+          <Nav pullRight>
+            <NavItem eventKey={1}  onClick = {this.handleLogout}>
+              Logout
+            </NavItem>
+          </Nav>
+          : null }
           <Navbar.Link pullRight className="gitLink" href="https://github.com/CSCI-3308-Project">GitHub</Navbar.Link>
           <Nav pullRight>
-            <NavItem eventKey={1} componentClass={Link} href="/login" to="/login">
+            {(this.props.loggedIn) ?
+            <NavItem eventKey={2} href="#" to="#">
+              User: {this.state.email}
+            </NavItem>
+            : null }
+            {(!this.props.loggedIn) ?
+            <NavItem eventKey={3} componentClass={Link} href="/login" to="/login">
               Login
             </NavItem>
-            <NavItem eventKey={2} componentClass={Link} href="/register" to="/register">
+            : null }
+            {(!this.props.loggedIn) ?
+            <NavItem eventKey={4} componentClass={Link} href="/register" to="/register">
               Register
             </NavItem>
-            <NavItem eventKey={3} componentClass={Link} href="/home" to="/home">
+            : null }
+            {(this.props.loggedIn) ?
+            <NavItem eventKey={5} componentClass={Link} href="/home" to="/home">
               Home
             </NavItem>
+<<<<<<< HEAD
             <NavItem eventKey={4} componentClass={Link} href="/profile" to="/profile">
               Profile
             </NavItem>
             <NavItem eventKey={5} componentClass={Link} href="/message" to="/message">
               Chat
             </NavItem>
+=======
+            : null }
+>>>>>>> b22a5e4868d00649e2e3d7ca8c18a28b976b0a36
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -39,4 +82,4 @@ class TopNav extends Component {
   };
 };
 
-export default TopNav;
+export default withRouter(TopNav);

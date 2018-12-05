@@ -4,6 +4,7 @@ import axios from 'axios';
 import Select from 'react-select';
 
 import './css/auth.css'
+import AuthService from './AuthService';
 import { courseData } from './courseData';
 
 class SignUp extends React.Component {
@@ -15,6 +16,7 @@ class SignUp extends React.Component {
       confirm_password: "",
       selectedCourses: null,
     }
+    this.Auth = new AuthService();
     this.handleChange = this.handleChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +36,6 @@ class SignUp extends React.Component {
         selectedCourses: event
       };
     });
-    console.log(this.state.selectedCourses);
   }
 
   isConfirmedPassword = event => {
@@ -46,10 +47,9 @@ class SignUp extends React.Component {
 
     var parsedCourses = {};
     for (var i = 0; i < this.state.selectedCourses.length; i++) {
-      var keyValue = "course_" + (i + 1);
-      parsedCourses[keyValue] = this.state.selectedCourses[i].value;
+      var key = "course_" + (i + 1);
+      parsedCourses[key] = "CSCI_" + this.state.selectedCourses[i].value;
     }
-    console.log(parsedCourses);
 
     const user = {
       email: this.state.email,
@@ -57,21 +57,31 @@ class SignUp extends React.Component {
       courses: parsedCourses
     };
 
-    console.log(user);
-
     axios.post(`http://localhost:8000/auth/signup`, user)
       .then(res => {
         console.log(res);
         console.log(res.data);
+        this.Auth.login(this.state.email, this.state.password)
+          .then(res => {
+            this.props.handleLogin();
+          })
+          .then(res => {
+            this.props.history.replace('/home');
+          })
+          .catch(err => {
+              alert(err);
+          })
       })
-      .catch(error => {
-        console.error(error.response.data);
+      .catch(err => {
+        console.error(err);
       });
 }
 
   render() {
+    const imgSrc = "https://i.imgur.com/BEpyK.jpg";
     return (
       <div className="SignUp">
+      <img src={imgSrc} className="bg" alt="Boulder Flatirons"/>
         <h1 className="SignUp_Banner">Lets get you signed up!</h1>
           <form onSubmit={this.handleSubmit}>
             <FormGroup controlId="email" bsSize="large">

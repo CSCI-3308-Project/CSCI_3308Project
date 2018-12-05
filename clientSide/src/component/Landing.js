@@ -3,15 +3,12 @@ import './css/landing.css'
 
 class Landing extends React.Component {
   render() {
+    const imgSrc = "https://4dttx13zn7901db8sx1mg5n8-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/iStock-492654918-1024x680.jpg";
     return (
       <div className = "Landing">
+        <img src={imgSrc} className="bg" alt="Study Buddies"/>
       	<div className = "Body">
-        	<h1> Study Buddies allow you to connect with other students on your local campus so that you
-        	can work on assignments together or study for exams or quizzes. Our hope is that this will
-        	allow students to better their learning efficiency by studying as a collective. Study Buddies
-        	will allow you to meet up with students in the real world who are working on the same classes as you are.
-        	Our aim is to bridge the gap between students in CSCI at CU Boulder who need help on assignments but
-        	are unwilling to reach out to each other for help.
+        	<h1> This page says some cool shit about us. Look at how cool we are!
         	</h1>
       	</div>
       </div>
