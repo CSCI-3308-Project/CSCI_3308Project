@@ -52,11 +52,11 @@ router.post('/signup', (req, res, next) => {
             });
         } else {
           //email in use!
-          next(new Error('Email in use'));
+          next(new Error('email in use'));
         }
     });
   } else {
-    next(new Error('Invalid user'));
+    next(new Error('invalid user'));
   }
 });
 

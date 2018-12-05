@@ -15,6 +15,7 @@ class SignUp extends React.Component {
       password: "",
       confirm_password: "",
       selectedCourses: [],
+      error: ""
     }
     this.Auth = new AuthService();
     this.handleChange = this.handleChange.bind(this);
@@ -23,11 +24,11 @@ class SignUp extends React.Component {
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.email.length > 0 && (this.state.password === this.state.confirm_password) && this.state.password.length >= 6;
   }
 
   handleChange = event => {
-    this.setState({ [event.target.type]: event.target.value });
+    this.setState({ [event.target.id]: event.target.value });
   }
 
   handleMultiChange = event => {
@@ -73,7 +74,8 @@ class SignUp extends React.Component {
           })
       })
       .catch(err => {
-        console.error(err);
+        console.error(err.response.data.message);
+        this.setState({error: err.response.data.message});
       });
 }
 
@@ -91,10 +93,13 @@ class SignUp extends React.Component {
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
+            <h6 className="email_error">{this.state.error}</h6>
             <FormGroup controlId="password" bsSize="large">
               <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
+                placeholder="six characters or longer"
+                autoComplete="new_password"
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
@@ -102,6 +107,8 @@ class SignUp extends React.Component {
               <ControlLabel>Confirm password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.confirm_password}
+                placeholder="re-type password"
+                autoComplete="new_password"
                 onChange={this.handleChange.bind(this)}
               />
             </FormGroup>
