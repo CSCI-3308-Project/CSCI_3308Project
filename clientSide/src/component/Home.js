@@ -109,7 +109,7 @@ class Home extends Component {
 
     return (
         <div className="container">
-        <img src={imgSrc} className="bg" alt="Dope Beach"/>
+        <img src={imgSrc} className="bg" alt="Dark Blue Beach"/>
           <div className="addPost">
           <Form inline>
             <ControlLabel id="courseTitle">Course Select</ControlLabel>
@@ -126,7 +126,7 @@ class Home extends Component {
               <ControlLabel id="locationTitle">Location</ControlLabel>
               <FormControl id="locationField" type="text" placeholder="CSEL" />
             </FormGroup>
-            <Button type="submit" id="postButton">Hit this shit!</Button>
+            <Button type="submit" id="postButton">Click this!</Button>
           </Form>
           </div>
           <div className="table" style={{ marginTop: 30 }}>

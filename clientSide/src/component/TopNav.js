@@ -48,7 +48,7 @@ class TopNav extends Component {
           <Nav pullRight>
             {(this.props.loggedIn) ?
             <NavItem eventKey={2} href="#" to="#">
-              User: {this.state.email}
+              You: {this.state.email}
             </NavItem>
             : null }
             {(!this.props.loggedIn) ?
