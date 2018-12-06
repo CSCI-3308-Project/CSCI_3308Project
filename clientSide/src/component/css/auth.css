@@ -9,8 +9,11 @@
 
   .SignUp form {
     margin: 0 auto;
-    color: white;
+    color: black;
     max-width: 320px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 16px;
+    opacity: 0.99;
   }
 
   .SignUp .basic-multi-select {
@@ -21,6 +24,12 @@
     margin: 20px 0;
     background-color: #3c9bc5;
     opacity: 1;
+  }
+
+  .SignUp .email_error{
+  	color: #cc0000;
+  	opacity: 1;
+  	font-size: 15px;
   }
 
   .LoginBody {
@@ -71,8 +80,11 @@
 
   .Login form {
     margin: 0 auto;
-    color: white;
+    color: black;
     max-width: 320px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 16px;
+    opacity: 0.99;
   }
 
   .SignUp_Banner{

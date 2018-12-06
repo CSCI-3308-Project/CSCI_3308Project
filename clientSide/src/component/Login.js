@@ -57,6 +57,7 @@ class Login extends React.Component {
               <ControlLabel>Email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
+                placeholder="name@example.com"
                 onChange={this.handleChange}
                 />
             </FormGroup>
@@ -65,6 +66,7 @@ class Login extends React.Component {
               <FormControl autoFocus type="password"
                 autoComplete="current_password"
                 defaultValue={this.state.password}
+                placeholder="Six characters or longer"
                 onChange={this.handleChange}
                 />
             </FormGroup>

@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var exjwt = require('express-jwt');
 const router = express.Router();
-
 const User = require('../db/user');
 
 function validUser(user) {
@@ -52,11 +51,11 @@ router.post('/signup', (req, res, next) => {
             });
         } else {
           //email in use!
-          next(new Error('email in use'));
+          next(new Error('A user with this email already exists.'));
         }
     });
   } else {
-    next(new Error('invalid user'));
+    next(new Error('Invalid User'));
   }
 });
 
