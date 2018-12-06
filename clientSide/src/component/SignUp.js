@@ -28,7 +28,8 @@ class SignUp extends React.Component {
   }
 
   handleChange = event => {
-    this.setState({ [event.target.id]: event.target.value });
+    this.setState({ [event.target.id]: event.target.value,
+                    error: ""});
   }
 
   handleMultiChange = event => {
@@ -113,14 +114,14 @@ class SignUp extends React.Component {
                 onChange={this.handleChange.bind(this)}
               />
             </FormGroup>
-              <ControlLabel>Current courses</ControlLabel>
-              <Select
-                isMulti
-                options={courseData}
-                className="basic-multi-select"
-                value={ this.state.selectedCourses }
-                onChange={this.handleMultiChange}
-              />
+            <ControlLabel>Current courses</ControlLabel>
+            <Select
+              isMulti
+              options={courseData}
+              className="basic-multi-select"
+              value={ this.state.selectedCourses }
+              onChange={this.handleMultiChange}
+            />
             <Button
               className="Submit"
               block

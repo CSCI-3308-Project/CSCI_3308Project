@@ -65,6 +65,7 @@ class Login extends React.Component {
             <FormGroup controlId="password" bsSize="large">
               <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
+                autoComplete="current_password"
                 defaultValue={this.state.password}
                 placeholder="Six characters or longer"
                 onChange={this.handleChange}
