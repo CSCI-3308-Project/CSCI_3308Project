@@ -14,8 +14,6 @@ var dataAxios = axios.create({
   crossDomain: true
 });
 
-var profile = JSON.parse(localStorage.getItem('profile'));
-
 function colFormatter(cell) {
   var link = "https://mail.google.com/mail/?view=cm&fs=1&to=" + cell;
   return (
@@ -28,7 +26,6 @@ class Home extends Component {
     super(props);
     this.state = {
       tableData: [],
-      user_courses: "",
       selectedCourses: []
     }
     this.Auth = new AuthService();
@@ -45,8 +42,9 @@ class Home extends Component {
   }
 
   InitialQuery = ()  => {
+    var profile = JSON.parse(localStorage.getItem('profile'));
     dataAxios.post(`http://localhost:8000/data`, profile.user.user_courses)
-      .then(res => this.setState({tableData: res.data, isLoaded: true, user_courses: profile.user.user_courses}))
+      .then(res => this.setState({tableData: res.data, isLoaded: true}))
       .catch(error => {
         console.error(error);
       });
@@ -70,7 +68,7 @@ class Home extends Component {
 
   render() {
     const imgSrc = "https://images.unsplash.com/photo-1506783323968-e8dad28ae1de?ixlib=rb-1.2.1&auto=format&fit=crop&w=2690&q=80";
-    const { isLoaded, tableData, user_courses} = this.state;
+    const { isLoaded, tableData } = this.state;
     const columns = [{
         dataField: 'post_id',
         text: 'Post Number',
