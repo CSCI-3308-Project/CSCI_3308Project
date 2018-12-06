@@ -90,6 +90,7 @@ class SignUp extends React.Component {
               <ControlLabel>Email</ControlLabel>
               <FormControl autoFocus type="email"
                 defaultValue={this.state.email}
+                placeholder="name@example.com"
                 onChange={this.handleChange.bind(this)}
                 />
             </FormGroup>
@@ -98,7 +99,7 @@ class SignUp extends React.Component {
               <ControlLabel>Password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.password}
-                placeholder="six characters or longer"
+                placeholder="Six characters or longer"
                 autoComplete="new_password"
                 onChange={this.handleChange.bind(this)}
                 />
@@ -107,7 +108,7 @@ class SignUp extends React.Component {
               <ControlLabel>Confirm password</ControlLabel>
               <FormControl autoFocus type="password"
                 defaultValue={this.state.confirm_password}
-                placeholder="re-type password"
+                placeholder="Re-type password"
                 autoComplete="new_password"
                 onChange={this.handleChange.bind(this)}
               />
