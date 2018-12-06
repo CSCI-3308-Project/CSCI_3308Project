@@ -5,6 +5,7 @@ import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootst
 import Select from 'react-select';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
+import AuthService from './AuthService';
 import { courseData } from './courseData';
 import './css/home.css'
 
@@ -30,12 +31,17 @@ class Home extends Component {
       user_courses: "",
       selectedCourses: []
     }
+    this.Auth = new AuthService();
     this.HandleQuery = this.HandleQuery.bind();
     this.handleMultiChange = this.handleMultiChange.bind(this);
   }
 
   componentDidMount() {
+    if (!this.Auth.loggedIn()) {
+        this.props.history.replace('/login')
+    } else {
       this.InitialQuery();
+    }
   }
 
   InitialQuery = ()  => {
@@ -116,7 +122,7 @@ class Home extends Component {
                 onChange={ this.handleMultiChange }
               />
             </div>
-            <FormGroup controlId="formInlineEmail">
+            <FormGroup>
               <ControlLabel id="locationTitle">Location</ControlLabel>
               <FormControl id="locationField" type="text" placeholder="CSEL" />
             </FormGroup>

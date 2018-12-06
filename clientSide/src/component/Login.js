@@ -19,7 +19,6 @@ class Login extends React.Component {
 
   componentDidMount() {
     if(this.Auth.loggedIn()) {
-
       this.props.history.replace('/home');
     }
   }
