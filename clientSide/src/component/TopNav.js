@@ -44,7 +44,7 @@ class TopNav extends Component {
             </NavItem>
           </Nav>
           : null }
-          <Navbar.Link pullRight className="gitLink" href="https://github.com/CSCI-3308-Project">GitHub</Navbar.Link>
+          <Navbar.Link pullRight className="gitLink" href="https://github.com/CSCI-3308-Project" target="_blank" rel="noopener noreferrer">GitHub</Navbar.Link>
           <Nav pullRight>
             {(this.props.loggedIn) ?
             <NavItem eventKey={2} href="#" to="#">

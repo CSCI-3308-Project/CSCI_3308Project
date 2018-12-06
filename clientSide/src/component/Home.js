@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import BootstrapTable from 'react-bootstrap-table-next';
-import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Form, Button, ControlLabel, FormControl } from "react-bootstrap";
 import Select from 'react-select';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 import AuthService from './AuthService';
-import { courseData } from './courseData';
+import { courseData } from './data/courseData';
+import { locationData } from './data/locationData';
 import './css/home.css'
 
 var dataAxios = axios.create({
@@ -26,11 +27,15 @@ class Home extends Component {
     super(props);
     this.state = {
       tableData: [],
-      selectedCourses: []
+      selectedCourse: "",
+      location: "",
+      note: ""
     }
     this.Auth = new AuthService();
     this.HandleQuery = this.HandleQuery.bind();
-    this.handleMultiChange = this.handleMultiChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
   componentDidMount() {
@@ -58,17 +63,21 @@ class Home extends Component {
       });
   }
 
-  handleMultiChange = event => {
-    this.setState(state => {
-      return {
-        selectedCourses: event
-      };
-    });
+  handleChange = event => {
+    this.setState({ [event.target.type]: event.target.value });
+  }
+
+  handleSelectChange = event => {
+    this.setState({ selectedCourse: event });
+  }
+
+  handleLocationChange = event => {
+    this.setState({ location: event });
   }
 
   render() {
     const imgSrc = "https://images.unsplash.com/photo-1506783323968-e8dad28ae1de?ixlib=rb-1.2.1&auto=format&fit=crop&w=2690&q=80";
-    const { isLoaded, tableData } = this.state;
+    const { isLoaded, tableData, selectedCourse, location } = this.state;
     const columns = [{
         dataField: 'post_id',
         text: 'Post Number',
@@ -113,17 +122,28 @@ class Home extends Component {
             <ControlLabel id="courseTitle">Course Select</ControlLabel>
             <div className="inlineSelect">
               <Select
-                isMulti
                 options={ courseData }
                 className="basic-multi-select"
-                value={ this.state.selectedCourses }
-                onChange={ this.handleMultiChange }
+                value={ selectedCourse }
+                onChange={ this.handleSelectChange }
               />
             </div>
-            <FormGroup>
-              <ControlLabel id="locationTitle">Location</ControlLabel>
-              <FormControl id="locationField" type="text" placeholder="CSEL" />
-            </FormGroup>
+            <ControlLabel id="locationTitle">Location</ControlLabel>
+            <div className="inlineSelect">
+              <Select
+                options={ locationData }
+                className="basic-multi-select"
+                value={ location }
+                onChange={ this.handleLocationChange }
+              />
+            </div>
+            <ControlLabel id="noteTitle">Description</ControlLabel>
+            <FormControl type="text"
+              id="noteField"
+              defaultValue={ this.state.note }
+              placeholder="Enter text"
+              onChange={ this.handleChange }
+            />
             <Button type="submit" id="postButton">Click this!</Button>
           </Form>
           </div>

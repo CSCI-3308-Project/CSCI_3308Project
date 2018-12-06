@@ -5,7 +5,7 @@ import Select from 'react-select';
 
 import './css/auth.css'
 import AuthService from './AuthService';
-import { courseData } from './courseData';
+import { courseData } from './data/courseData';
 
 class SignUp extends React.Component {
   constructor() {

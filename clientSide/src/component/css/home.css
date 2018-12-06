@@ -22,7 +22,7 @@ img.bg {
 }
 
 .addPost .basic-multi-select {
-  width: 110px;
+  width: 128px;
   color: black;
   opacity: 1;
 }
@@ -35,20 +35,30 @@ img.bg {
   color: black;
   border-radius: 5px;
   background-color: white;
+  padding: 5px;
 }
 
 form #locationField {
   width: 100px;
 }
 
+form #noteField {
+  width: 400px;
+  margin-right: 20px;
+}
+
 form #courseTitle {
-  margin: 8px;
+  margin: 0px 20px 0px 6px;
 }
 
 form #locationTitle {
-  margin: 8px;
+  margin: 0px 20px;
+}
+
+form #noteTitle {
+  margin: 0px 20px;
 }
 
 form #postButton {
-  margin: 8px;
+  /* margin: 0px 20px; */
 }
