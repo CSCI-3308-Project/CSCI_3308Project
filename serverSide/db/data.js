@@ -5,6 +5,14 @@ module.exports = {
       return knex.select().table('posts');
     },
     getSpecific: function(dataArr) {
-      return knex.select('post_id','course','location','note','email').from('posts').join('users','users.user_id','=','posts.user_id').whereIn('course',dataArr);
+      return knex.select('posts.user_id','posts.post_id','posts.course','posts.location','posts.note','users.email').from('posts').join('users','users.user_id','=','posts.user_id').whereIn('course',dataArr);
+    },
+    addPost: function(postData) {
+      return knex('posts').insert(postData);
+    },
+    deletePost: function(id) {
+      return knex('posts').where('post_id', id).del().then(ids => {
+        return ids[0];
+      });
     }
 }

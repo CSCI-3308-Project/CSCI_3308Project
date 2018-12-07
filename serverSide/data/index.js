@@ -22,4 +22,17 @@ router.post('/', (req, res, next) => {
   });
 });
 
+router.post('/addpost', (req, res, next) => {
+  Data.addPost(req.body).then( data => {
+    console.log(data);
+  });
+});
+
+router.post('/deletepost', (req, res, next) => {
+  console.log(req.body);
+  Data.deletePost(req.body.post_id).then( data => {
+    console.log("wahoo!");
+  });
+});
+
 module.exports = router;

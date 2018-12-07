@@ -20,15 +20,6 @@ export default class AuthService {
           password: password
         };
 
-        // Get a token from api server using the fetch api
-        // return this.fetch(`http://localhost:8000/auth/login`, {
-        //     method: 'POST',
-        //     body: user
-        // }).then(res => {
-        //     this.setToken(res.token) // Setting the token in localStorage
-        //     return Promise.resolve(res);
-        // })
-
         return loginAxios.post(`http://localhost:8000/auth/login`, user)
           .then(res => {
             this.setToken(res.data.token)

@@ -42,9 +42,14 @@ form #locationField {
   width: 100px;
 }
 
+form .submitForm {
+  display: inline-block;
+}
+
 form #noteField {
   width: 400px;
   margin-right: 20px;
+  display: inline-block;
 }
 
 form #courseTitle {
@@ -59,6 +64,6 @@ form #noteTitle {
   margin: 0px 20px;
 }
 
-form #postButton {
-  /* margin: 0px 20px; */
+form .subBtn {
+  width: 100px;
 }

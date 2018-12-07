@@ -15,8 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false,
-      isLoaded: false
+      loggedIn: false
     };
     this.Auth = new AuthService();
     this.handleLogin = this.handleLogin.bind();
@@ -33,8 +32,7 @@ class App extends Component {
 
   handleLogin = event => {
     localStorage.setItem("profile", JSON.stringify(this.Auth.getProfile()));
-    this.setState({loggedIn: true,
-                   isLoaded: true
+    this.setState({loggedIn: true
       });
   }
 
@@ -51,7 +49,7 @@ class App extends Component {
           <Switch>
             <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
             <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
-            <Route path="/home" render= {(props) => <Home {...props} isLoaded={this.state.isLoaded} />} />
+            <Route path="/home" render= {(props) => <Home {...props} />} />
 	          <Route exact path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
