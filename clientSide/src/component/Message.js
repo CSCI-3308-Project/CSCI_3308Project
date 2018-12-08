@@ -1,25 +1,12 @@
 import React from 'react';
-import Select from 'react-select';
 import PropTypes from 'prop-types';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import './css/message.css'
 
 class Message extends React.Component {
-    //Messagelist
-    constructor(props) {
-        super(props);
-        this.state = {
-            message: [
-            { body: "Connecting..." },
-            { user: "You", body: "Hello!", me: true },
-            { user: "Them", body: "Hey there!"  },
-            ],
-        };
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+    static propTypes = {
+        messageSend: PropTypes.func.isRequired,
     }
-
-    
 
     validateForm() {
         return this.state.message.length > 0
@@ -43,14 +30,6 @@ class Message extends React.Component {
         return(
             <div className="Message">
                 <form>
-                    <FormGroup className="Messagelist">
-                        {this.props.message.map((message, i) => (
-                        <div className="user">
-                            {message.user && (
-                            <span>{message.user}:</span> )}
-                            {message.body}
-                        </div> ))}
-                    </FormGroup>
                     <FormGroup onSubmit={this.handleSubmit}>
                         <input
                             onChange={this.handleChange}
@@ -58,7 +37,7 @@ class Message extends React.Component {
                             placeholder="Send Message" 
                             type="text">
                         </input>
-                        <button>
+                        <button type="submit">
                             Send
                         </button>
                     </FormGroup>

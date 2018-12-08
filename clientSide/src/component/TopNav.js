@@ -65,16 +65,17 @@ class TopNav extends Component {
             <NavItem eventKey={5} componentClass={Link} href="/home" to="/home">
               Home
             </NavItem>
-<<<<<<< HEAD
+            : null }
+            {(this.props.loggedIn) ?
             <NavItem eventKey={4} componentClass={Link} href="/profile" to="/profile">
               Profile
             </NavItem>
+            : null }
+            {(this.props.loggedIn) ?
             <NavItem eventKey={5} componentClass={Link} href="/message" to="/message">
               Chat
             </NavItem>
-=======
             : null }
->>>>>>> b22a5e4868d00649e2e3d7ca8c18a28b976b0a36
           </Nav>
         </Navbar.Collapse>
       </Navbar>

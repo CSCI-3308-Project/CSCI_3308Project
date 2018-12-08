@@ -1,7 +1,6 @@
 import React from 'react';
-import Proptypes from 'prop-types';
-import Message from './Message';
-import './auth.css'
+import PropTypes from 'prop-types';
+import './css/message.css'
 
 class Messagelist extends React.Component {
     static propTypes = {
@@ -10,13 +9,26 @@ class Messagelist extends React.Component {
     static defaultProps = {
         message: [],
     }
+
+    static propTypes = {
+        user: PropTypes.string,
+        body: PropTypes.string.isRequired,
+        me: PropTypes.bool,
+    }
+
+    componentDidUpdate = () => {
+        this.node.scrollTOp = this.node.scrollHeight
+    }
     
     render() {
         return(
             <div className="Messagelist">
-                <form onSubmit={this.handleSubmit}>
-                    <div><span>User 1:</span></div>
-                </form>
+                {this.props.message.map((message, i) => (
+                    <div className="user">
+                        {this.props.user && (
+                        <span>{this.props.user}:</span> )}
+                        {this.props.body}
+                    </div> ))}
             </div>
         )
     }

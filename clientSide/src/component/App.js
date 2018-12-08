@@ -10,8 +10,7 @@ import Error from './Error';
 import Login from './Login';
 import Home from './Home';
 import Landing from './Landing';
-<<<<<<< HEAD
-import Message from './Message';
+import Messagelist from './Messagelist';
 
 const fakeAuth = {
   isAuthenticated: true,
@@ -22,18 +21,21 @@ const fakeAuth = {
   signout(cb) {
     this.isAuthenticated = false
     setTimeout(cb, 100)
-=======
+  }
+}
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loggedIn: false,
-      isLoaded: false
+      isLoaded: false,
+      message: []
     };
     this.Auth = new AuthService();
     this.handleLogin = this.handleLogin.bind();
->>>>>>> b22a5e4868d00649e2e3d7ca8c18a28b976b0a36
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -52,15 +54,17 @@ class App extends Component {
       });
   }
 
-<<<<<<< HEAD
-class App extends Component {
-=======
   handleLogout = event => {
     this.Auth.logout();
     this.setState({loggedIn: false});
   }
 
->>>>>>> b22a5e4868d00649e2e3d7ca8c18a28b976b0a36
+  handleMessage = text => {
+    this.setState({
+      handleMessage: [...this.state.handleMessage, { me: true, user: "Me", body: text }],
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -70,10 +74,7 @@ class App extends Component {
             <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
             <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
             <Route path="/home" render= {(props) => <Home {...props} isLoaded={this.state.isLoaded} />} />
-<<<<<<< HEAD
-            <Route path="/message" render= {(props) => <Message {...props} handlemessage={this.state.handlemessage} />}>
-=======
->>>>>>> b22a5e4868d00649e2e3d7ca8c18a28b976b0a36
+            <Route path="/messagelist" render= {(props) => <Messagelist {...props} handleMessage={this.state.handleMessage} />} />
 	          <Route path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
