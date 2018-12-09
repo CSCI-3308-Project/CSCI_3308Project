@@ -4,8 +4,8 @@ module.exports = {
     connection: {
       host : 'localhost',
       database: 'studybuddies',
-      user: 'postgres'
-      //password: 
+      user: 'julienrumsey',
+      password: 'element5'
     },
     migrations: {
       directory: __dirname + '/db/migrations',
