@@ -11,8 +11,6 @@ module.exports = {
       return knex('posts').insert(postData);
     },
     deletePost: function(id) {
-      return knex('posts').where('post_id', id).del().then(ids => {
-        return ids[0];
-      });
+      return knex('posts').where('post_id', id).del();
     }
 }
