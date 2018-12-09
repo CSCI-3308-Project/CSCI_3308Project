@@ -12,7 +12,7 @@ const styles = theme => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',  
-    marginTop: '15%',  
+    marginTop: '12%',  
   },
   image: {
     position: 'relative',
@@ -66,7 +66,7 @@ const styles = theme => ({
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
-    fontSize: 13, 
+    fontSize: 15, 
     position: 'relative',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
   },
@@ -108,6 +108,7 @@ function ButtonBases(props) {
   return (
     <div className={classes.root}>
     <img src={imgSrc} className="bg" alt="Mountain Lake "/>
+      <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1> 
       {images.map(image => (
         <ButtonBase
           focusRipple
