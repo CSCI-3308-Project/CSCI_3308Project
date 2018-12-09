@@ -10,6 +10,7 @@ import Error from './Error';
 import Login from './Login';
 import Home from './Home';
 import Landing from './Landing';
+import ResourcePage from './ResourcePage'; 
 
 class App extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends Component {
             <Route path="/register" render= {(props) => <SignUp {...props} handleLogin={this.handleLogin} />} />
             <Route path="/login" render= {(props) => <Login {...props} handleLogin={this.handleLogin} />} />
             <Route path="/home" render= {(props) => <Home {...props} />} />
+            <Route path="/resourcepage" render= {(props) => <ResourcePage {...props} />} />
 	          <Route exact path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
