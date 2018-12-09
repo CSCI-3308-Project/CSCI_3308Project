@@ -66,6 +66,11 @@ class TopNav extends Component {
               Home
             </NavItem>
             : null }
+            {(this.props.loggedIn) ?
+            <NavItem eventKey={6} componentClass={Link} href="/resourcepage" to="/resourcepage">
+              Resources
+            </NavItem> 
+            : null }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
