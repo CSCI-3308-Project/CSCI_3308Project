@@ -14,6 +14,7 @@
     background-color: rgba(255, 255, 255, 0.7);
     padding: 16px;
     opacity: 0.99;
+    border-radius: 6px;
   }
 
   .SignUp .basic-multi-select {
@@ -35,11 +36,11 @@
   .LoginBody {
     margin-top: 20px;
     padding: 40px;
-    color: white; 
+    color: white;
     text-align: center;
   }
 
- 
+
   .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
     opacity: 0.5;
     background-color: gray;
@@ -85,6 +86,7 @@
     background-color: rgba(255, 255, 255, 0.7);
     padding: 16px;
     opacity: 0.99;
+    border-radius: 6px;
   }
 
   .SignUp_Banner{
