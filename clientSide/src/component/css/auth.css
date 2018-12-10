@@ -40,15 +40,12 @@
     text-align: center;
   }
 
-<<<<<<< HEAD
-=======
   .Login .login_error{
     color: #cc0000;
     opacity: 1;
     font-size: 13px;
   }
 
->>>>>>> e45df2b4973ec06ab1d168b8cca2762eed395f91
 
   .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
     opacity: 0.5;
