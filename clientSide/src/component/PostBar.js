@@ -3,7 +3,6 @@ import { Button, ControlLabel, FormControl } from "react-bootstrap";
 import Select from 'react-select';
 import axios from 'axios';
 
-import { courseData } from './data/courseData';
 import { locationData } from './data/locationData';
 
 var barAxios = axios.create({
