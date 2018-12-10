@@ -35,11 +35,17 @@
   .LoginBody {
     margin-top: 20px;
     padding: 40px;
-    color: white; 
+    color: white;
     text-align: center;
   }
 
- 
+  .Login .login_error{
+    color: #cc0000;
+    opacity: 1;
+    font-size: 13px;
+  }
+
+
   .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
     opacity: 0.5;
     background-color: gray;
