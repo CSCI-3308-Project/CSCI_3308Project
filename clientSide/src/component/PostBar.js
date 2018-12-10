@@ -56,6 +56,18 @@ class PostBar extends Component {
         });
     }
 
+    userCourses() {
+      var profile = JSON.parse(localStorage.getItem('profile'));
+      var dropDown = [];
+      var courses = profile.user.user_courses;
+      Object.keys(courses).forEach(function(key) {
+        var val = courses[key].slice(5);
+        dropDown.push({ value: val, label: courses[key] });
+      });
+      dropDown.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
+      return dropDown;
+    }
+
     render() {
       const { selectedCourse, location, note } = this.state;
       return (
@@ -63,7 +75,7 @@ class PostBar extends Component {
           <ControlLabel id="courseTitle">Course Select</ControlLabel>
           <div className="inlineSelect">
             <Select
-              options={ courseData }
+              options={ this.userCourses() }
               className="basic-multi-select"
               value={ selectedCourse }
               onChange={ this.handleSelectChange }
