@@ -104,10 +104,10 @@ const images = [
 
 function ButtonBases(props) {
   const { classes } = props;
-  const imgSrc = "http://getwallpapers.com/wallpaper/full/4/f/c/1043875-top-beach-sunrise-wallpaper-1920x1200-for-iphone-7.jpg";
+  const imgSrc = "https://c.wallhere.com/photos/dd/ad/1600x900_px_beach_clouds_island_landscape_nature_Palm_Trees_rock-698360.jpg!d";
   return (
     <div className={classes.root}>
-    <img src={imgSrc} className="bg" alt="Mountain Lake "/>
+    <img src={imgSrc} className="bg" alt="Sunny Beach"/>
       <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1>
       {images.map(image => (
         <ButtonBase
