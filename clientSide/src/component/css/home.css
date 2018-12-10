@@ -61,12 +61,14 @@ img.bg {
   margin: 0px 20px;
 }
 
-.addPost #noteTitle {
-  margin: 0px 20px;
+.addPost .submitBtnForm {
   display: inline-block;
 }
 
-.addPost .submitBtnForm {
+.addPost .submitBtnForm #noteTitle {
+  margin: 0px 20px;
+}
+
+.addPost .submitBtnForm .subBtn {
   width: 100px;
-  display: inline-block;
 }

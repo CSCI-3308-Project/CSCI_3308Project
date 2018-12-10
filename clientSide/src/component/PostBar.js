@@ -89,14 +89,14 @@ class PostBar extends Component {
               onChange={ this.handleLocationChange }
             />
           </div>
-          <ControlLabel id="noteTitle">Description</ControlLabel>
-          <FormControl type="text"
-            id="noteField"
-            defaultValue={ note }
-            placeholder="Enter text"
-            onChange={ this.handleNoteChange }
-          />
           <form className="submitBtnForm" onSubmit={ this.handleSubmit }>
+            <ControlLabel id="noteTitle">Description</ControlLabel>
+            <FormControl type="text"
+              id="noteField"
+              defaultValue={ note }
+              placeholder="Enter text"
+              onChange={ this.handleNoteChange }
+            />
             <Button className = "subBtn" type='submit'>Submit</Button>
           </form>
         </div>
