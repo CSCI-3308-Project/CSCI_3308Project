@@ -11,8 +11,8 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
-    width: '100%',  
-    marginTop: '12%',  
+    width: '100%',
+    marginTop: '12%',
   },
   image: {
     position: 'relative',
@@ -66,7 +66,7 @@ const styles = theme => ({
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
-    fontSize: 15, 
+    fontSize: 15,
     position: 'relative',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
   },
@@ -86,29 +86,29 @@ const images = [
     url: 'https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.svg?v=a010291124bf',
     title: 'Stack Overflow',
     width: '40%',
-    link: 'https://stackoverflow.com/', 
+    link: 'https://stackoverflow.com/',
   },
   {
     url: 'http://code.google.com/images/developers.png',
     title: 'Google Code',
     width: '30%',
-    link: 'https://code.google.com/', 
+    link: 'https://code.google.com/',
   },
   {
     url: 'https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/se/se-logo.svg?v=d29f0785ebb7',
     title: 'Stack Exchange',
     width: '30%',
-    link: 'https://stackexchange.com/', 
+    link: 'https://stackexchange.com/',
   },
 ];
 
 function ButtonBases(props) {
   const { classes } = props;
-  const imgSrc = "http://www.wallpapers13.com/wp-content/uploads/2015/12/River-Dunajec-Poland-summer-landscape-Mountains-with-forest-green-grass-blue-sky-Desktop-Wallpaper-HD.jpg";
+  const imgSrc = "http://getwallpapers.com/wallpaper/full/4/f/c/1043875-top-beach-sunrise-wallpaper-1920x1200-for-iphone-7.jpg";
   return (
     <div className={classes.root}>
     <img src={imgSrc} className="bg" alt="Mountain Lake "/>
-      <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1> 
+      <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1>
       {images.map(image => (
         <ButtonBase
           focusRipple
@@ -119,14 +119,14 @@ function ButtonBases(props) {
             width: image.width,
           }}
         >
-          <span className={classes.imageSrc} 
+          <span className={classes.imageSrc}
             style={{
               backgroundImage: `url(${image.url})`
             }}
           />
           <span className={classes.imageBackdrop} />
-          <a href = {image.link} target="_blank" rel="noopener noreferrer"> 
-            <span className={classes.imageButton}> 
+          <a href = {image.link} target="_blank" rel="noopener noreferrer">
+            <span className={classes.imageButton}>
               <Typography
                 component="span"
                 variant="subtitle1"
@@ -137,7 +137,7 @@ function ButtonBases(props) {
                 <span className={classes.imageMarked} />
               </Typography>
             </span>
-          </a> 
+          </a>
         </ButtonBase>
       ))}
     </div>
