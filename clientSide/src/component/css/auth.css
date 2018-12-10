@@ -14,6 +14,7 @@
     background-color: rgba(255, 255, 255, 0.7);
     padding: 16px;
     opacity: 0.99;
+    border-radius: 6px;
   }
 
   .SignUp .basic-multi-select {
@@ -39,12 +40,15 @@
     text-align: center;
   }
 
+<<<<<<< HEAD
+=======
   .Login .login_error{
     color: #cc0000;
     opacity: 1;
     font-size: 13px;
   }
 
+>>>>>>> e45df2b4973ec06ab1d168b8cca2762eed395f91
 
   .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
     opacity: 0.5;
@@ -91,6 +95,7 @@
     background-color: rgba(255, 255, 255, 0.7);
     padding: 16px;
     opacity: 0.99;
+    border-radius: 6px;
   }
 
   .SignUp_Banner{
