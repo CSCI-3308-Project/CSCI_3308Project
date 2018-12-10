@@ -1,1 +1,1 @@
-This is the code repository for the project
+This is Pari's branch for the project. 
