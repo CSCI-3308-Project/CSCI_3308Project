@@ -24,14 +24,14 @@ router.post('/', (req, res, next) => {
 
 router.post('/addpost', (req, res, next) => {
   Data.addPost(req.body).then( data => {
-    console.log(data);
+    res.send(data);
   });
 });
 
 router.post('/deletepost', (req, res, next) => {
-  console.log(req.body);
-  Data.deletePost(req.body.post_id).then( data => {
-    console.log("wahoo!");
+  console.log(req.body)
+  Data.deletePost(req.body).then( data => {
+    res.send("Success");
   });
 });
 

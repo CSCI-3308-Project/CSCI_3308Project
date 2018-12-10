@@ -81,11 +81,11 @@ router.post('/login', (req, res, next) => {
             }
           });
         } else {
-          next(new Error('Email is not in system'));
+          next(new Error('This Email address is not registered.'));
         }
       });
   } else {
-    next(new Error('Email or Password were typed incorrectly'));
+    next(new Error('Email or Password were typed incorrectly. Password must be at least 6 characters long.'));
   }
 });
 

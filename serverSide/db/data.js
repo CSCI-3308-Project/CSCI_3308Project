@@ -10,9 +10,7 @@ module.exports = {
     addPost: function(postData) {
       return knex('posts').insert(postData);
     },
-    deletePost: function(id) {
-      return knex('posts').where('post_id', id).del().then(ids => {
-        return ids[0];
-      });
+    deletePost: function(idArr) {
+      return knex('posts').whereIn('post_id', idArr).del();
     }
 }

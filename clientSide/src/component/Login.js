@@ -11,6 +11,7 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
+      error: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,11 +25,12 @@ class Login extends React.Component {
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.email.length > 0;
   }
 
   handleChange = event => {
-    this.setState({ [event.target.type]: event.target.value });
+    this.setState({ [event.target.type]: event.target.value,
+                    error: ""});
   }
 
   handleSubmit = event => {
@@ -42,7 +44,7 @@ class Login extends React.Component {
         this.props.history.replace('/home');
       })
       .catch(err => {
-          alert(err);
+          this.setState({error: err.response.data.message});
       })
   }
 
@@ -70,6 +72,7 @@ class Login extends React.Component {
                 onChange={this.handleChange}
                 />
             </FormGroup>
+            <h6 className="login_error">{this.state.error}</h6>
             <Button className = "loginBtn"
               block
               bsSize="large"
