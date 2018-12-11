@@ -59,14 +59,14 @@ export default class AuthService {
 
     logout() {
         // Clear user token and profile data from localStorage
-        var profile = JSON.parse(localStorage.getItem('profile'));
+        //var profile = JSON.parse(localStorage.getItem('profile'));
         localStorage.removeItem('id_token')
         localStorage.removeItem('profile')
-        loginAxios.post(`http://localhost:8000/data/deleteall`, profile.user)
-          .then()
-          .catch(error => {
-            console.error(error);
-          });
+        // loginAxios.post(`http://localhost:8000/data/deleteall`, profile.user)
+        //   .then()
+        //   .catch(error => {
+        //     console.error(error);
+        //   });
     }
 
     getProfile() {
