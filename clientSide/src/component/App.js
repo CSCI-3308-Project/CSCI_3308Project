@@ -11,7 +11,7 @@ import Error from './Error';
 import Login from './Login';
 import Home from './Home';
 import Landing from './Landing';
-import ResourcePage from './ResourcePage'; 
+import ResourcePage from './ResourcePage';
 
 
 class App extends Component {
@@ -57,7 +57,7 @@ class App extends Component {
 	          <Route exact path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
-		<BotNav/>
+		      <BotNav/>
         </div>
       </BrowserRouter>
     );
