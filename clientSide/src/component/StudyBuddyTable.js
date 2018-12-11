@@ -158,7 +158,7 @@ class StudyBuddyTable extends Component {
           selectRow={ selectRow }
           defaultSorted={ defaultSorted } />
           <form className="tableForm" onSubmit={ this.handleSubmit }>
-            <Button className = "delBtn" type='submit'>Delete Selected</Button>
+            <Button className = "delBtn" type='submit' >Delete Selected</Button>
           </form>
         </div>
       )

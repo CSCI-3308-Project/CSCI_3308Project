@@ -1,12 +1,12 @@
 .example{
-position:fixed;
-left:0px;
-bottom:0px;
-right:0px;
-background-color: #222;
-width:100%;
-color:white;
-border-radius: 6px;
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color: #222;
+	width:100%;
+	color:white;
+	border-radius: 6px;
 }
 
 .navRow .rowLink{
