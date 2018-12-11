@@ -9,22 +9,22 @@ color:white;
 border-radius: 5px;
 }
 
-a{
+.navRow .rowLink{
 	color: #9d9d9d;
 }
-a:hover{
+.navRow .rowLink:hover{
 	text-decoration: none;
 	color: white;
 }
-a:link {
+.navRow .rowLink:link {
   text-decoration: none;
 }
 
-a:visited {
+.navRow .rowLink:visited {
   text-decoration: none;
 }
 
-a:active {
+.navRow .rowLink:active {
   text-decoration: none;
 }
 
