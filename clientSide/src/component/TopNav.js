@@ -29,7 +29,7 @@ class TopNav extends Component {
 
   render () {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect b>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">Study Buddies</Link>
