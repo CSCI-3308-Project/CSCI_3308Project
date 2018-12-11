@@ -22,7 +22,7 @@
   }
 
   .SignUp .Submit {
-    margin: 20px 0 200px;
+    margin: 20px 0px;;
     background-color: #3c9bc5;
     opacity: 1;
   }
@@ -44,23 +44,6 @@
     color: #cc0000;
     opacity: 1;
     font-size: 13px;
-  }
-
-
-  .loginBtn.disabled, .loginBtn[disabled], fieldset[disabled] .loginBtn {
-    opacity: 0.5;
-    background-color: gray;
-  }
-
-  .SignUp .Submit.disabled, .SignUp .Submit[disabled], fieldset[disabled] .SignUp .Submit {
-    opacity: 0.5;
-    background-color: gray;
-  }
-
-  .loginBtn {
-    color: white;
-    background-color: #3c9bc5;
-    opacity: 1;
   }
 
   .Login {
@@ -98,10 +81,6 @@
   .SignUp_Banner{
     padding: 10px;
     text-align: center;
-  }
-
-  button.Submit.btn.btn-lg.btn-default.btn-block {
-      margin-top: 15px;
   }
 
 }

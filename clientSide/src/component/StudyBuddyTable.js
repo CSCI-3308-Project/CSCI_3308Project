@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import axios from 'axios';
 
 import PostBar from './PostBar';
-import './css/studyBuddyTable.css'
+//import './css/studyBuddyTable.css'
 
 var dataAxios = axios.create({
   withCredentials: true,

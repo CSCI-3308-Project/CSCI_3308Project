@@ -3,8 +3,7 @@ import  { Redirect } from 'react-router-dom';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 import AuthService from './AuthService';
-import './css/auth.css'
-
+import './css/auth.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -20,7 +19,7 @@ class Login extends React.Component {
   }
 
   validateForm() {
-    return this.state.email.length > 0;
+    return this.state.email.length > 0 && this.state.password.length >= 6;
   }
 
   handleChange = event => {
@@ -72,7 +71,7 @@ class Login extends React.Component {
                 />
             </FormGroup>
             <h6 className="login_error">{this.state.error}</h6>
-            <Button className = "loginBtn"
+            <Button className="loginBtn"
               block
               bsSize="large"
               disabled={!this.validateForm()}

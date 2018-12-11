@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-//import SimpleStorage from "react-simple-storage";
 
 import AuthService from './AuthService';
+import './css/general.css';
 
 import SignUp from './SignUp';
 import TopNav from './TopNav';
