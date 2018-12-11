@@ -12,5 +12,8 @@ module.exports = {
     },
     deletePost: function(idArr) {
       return knex('posts').whereIn('post_id', idArr).del();
+    },
+    deleteAll: function(user_id) {
+      return knex('posts').where('user_id', user_id).del();
     }
 }

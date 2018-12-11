@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap";
 import axios from 'axios';
 
 import PostBar from './PostBar';
-//import './css/studyBuddyTable.css'
 
 var dataAxios = axios.create({
   withCredentials: true,
@@ -79,7 +78,6 @@ class StudyBuddyTable extends Component {
 
     handleSubmit = event => {
       event.preventDefault();
-      console.log(this.state.selected);
       dataAxios.post(`http://localhost:8000/data/deletepost`, this.state.selected)
         .then(res => {
           this.PersonalQuery()})

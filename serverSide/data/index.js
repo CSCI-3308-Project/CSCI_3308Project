@@ -29,8 +29,13 @@ router.post('/addpost', (req, res, next) => {
 });
 
 router.post('/deletepost', (req, res, next) => {
-  console.log(req.body)
   Data.deletePost(req.body).then( data => {
+    res.send("Success");
+  });
+});
+
+router.post('/deleteall', (req, res, next) => {
+  Data.deleteAll(req.body.user_id).then( data => {
     res.send("Success");
   });
 });
