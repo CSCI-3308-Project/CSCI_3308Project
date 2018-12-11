@@ -15,9 +15,9 @@ export class BotNav extends Component {
       <div>
         <Footer
         className='example'
-        copyrights="&copy; 2018 Copyright Text"
         links={
           <Row className="navRow">
+            <Col className="copyRight">&copy; 2018 Copyright Text</Col>
             <Col className="navItem" ><a className="rowLink" href={about_PSQL} target="_blank" rel="noopener noreferrer">PostgreSQL</a></Col>
             <Col className="navItem" ><a className="rowLink" href={about_NodeJS} target="_blank" rel="noopener noreferrer">Node.js</a></Col>
             <Col className="navItem" ><a className="rowLink" href={about_React} target="_blank" rel="noopener noreferrer">React</a></Col>

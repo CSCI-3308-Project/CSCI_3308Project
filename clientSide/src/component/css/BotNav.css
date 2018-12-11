@@ -6,7 +6,7 @@ right:0px;
 background-color: #222;
 width:100%;
 color:white;
-border-radius: 5px;
+border-radius: 6px;
 }
 
 .navRow .rowLink{
@@ -29,8 +29,13 @@ border-radius: 5px;
 }
 
 .navRow {
-  text-align: center;
+  padding: 8px;
   justify-content: center;
+}
+
+.navRow .copyRight {
+  float:left;
+  vertical-align: bottom;
 }
 
 .navItem {
