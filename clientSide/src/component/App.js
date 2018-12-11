@@ -13,9 +13,6 @@ import Home from './Home';
 import Landing from './Landing';
 import ResourcePage from './ResourcePage';
 
-import 'mdbreact/dist/css/mdb.css'
-
-
 class App extends Component {
   constructor(props) {
     super(props);

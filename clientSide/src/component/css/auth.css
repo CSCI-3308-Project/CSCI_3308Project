@@ -22,7 +22,7 @@
   }
 
   .SignUp .Submit {
-    margin: 20px 0;
+    margin: 20px 0 200px;
     background-color: #3c9bc5;
     opacity: 1;
   }
@@ -98,6 +98,10 @@
   .SignUp_Banner{
     padding: 10px;
     text-align: center;
+  }
+
+  button.Submit.btn.btn-lg.btn-default.btn-block {
+      margin-top: 15px;
   }
 
 }

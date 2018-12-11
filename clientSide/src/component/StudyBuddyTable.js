@@ -3,7 +3,8 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import { Button } from "react-bootstrap";
 import axios from 'axios';
 
-import PostBar from './PostBar'
+import PostBar from './PostBar';
+import './css/studyBuddyTable.css'
 
 var dataAxios = axios.create({
   withCredentials: true,
@@ -150,6 +151,7 @@ class StudyBuddyTable extends Component {
         <div className='container'>
           <PostBar PersonalQuery={this.PersonalQuery} />
           <BootstrapTable
+          className='table'
           striped
           hover
           keyField='post_id'
