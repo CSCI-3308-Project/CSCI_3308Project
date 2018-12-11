@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import axios from 'axios';
 
 import PostBar from './PostBar';
+import './css/table.css'
 
 var dataAxios = axios.create({
   withCredentials: true,
