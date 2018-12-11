@@ -102,6 +102,7 @@ const images = [
   },
 ];
 
+<<<<<<< HEAD
 class ButtonBases extends Component {
   constructor(props) {
     super(props);
@@ -125,6 +126,26 @@ class ButtonBases extends Component {
             key={image.title}
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
+=======
+function ButtonBases(props) {
+  const { classes } = props;
+  const imgSrc = "https://c.wallhere.com/photos/dd/ad/1600x900_px_beach_clouds_island_landscape_nature_Palm_Trees_rock-698360.jpg!d";
+  return (
+    <div className={classes.root}>
+    <img src={imgSrc} className="bg" alt="Sunny Beach"/>
+      <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1>
+      {images.map(image => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        >
+          <span className={classes.imageSrc}
+>>>>>>> 3b1fe55ba77d9031e42fde15eb181993e7a4508e
             style={{
               width: image.width,
             }}
