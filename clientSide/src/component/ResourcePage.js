@@ -117,7 +117,7 @@ class ButtonBases extends Component {
     }
     return (
       <div className={classes.root}>
-      <img src={imgSrc} className="bg" alt="Mountain Lake "/>
+      <img src={imgSrc} className="bg" alt="Palm Trees Rock"/>
         <h1 className = "Header"> Still stuck? We recommend looking to these resources to get ahead. </h1>
         {images.map(image => (
           <ButtonBase
