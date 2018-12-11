@@ -3,7 +3,8 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import { Button } from "react-bootstrap";
 import axios from 'axios';
 
-import PostBar from './PostBar'
+import PostBar from './PostBar';
+import './css/studyBuddyTable.css'
 
 var dataAxios = axios.create({
   withCredentials: true,
@@ -92,7 +93,7 @@ class StudyBuddyTable extends Component {
       for(var i = 0; i < this.state.tableData.length; i++) {
         var obj = this.state.tableData[i];
         if (obj.user_id !== this.profile.user.user_id) {
-          arr.push(obj.user_id)
+          arr.push(obj.post_id)
         }
       }
       return arr;
@@ -150,6 +151,7 @@ class StudyBuddyTable extends Component {
         <div className='container'>
           <PostBar PersonalQuery={this.PersonalQuery} />
           <BootstrapTable
+          className='table'
           striped
           hover
           keyField='post_id'

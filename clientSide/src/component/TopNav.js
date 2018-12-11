@@ -29,7 +29,7 @@ class TopNav extends Component {
 
   render () {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect >
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">Study Buddies</Link>
@@ -69,7 +69,7 @@ class TopNav extends Component {
             {(this.props.loggedIn) ?
             <NavItem eventKey={6} componentClass={Link} href="/resourcepage" to="/resourcepage">
               Resources
-            </NavItem> 
+            </NavItem>
             : null }
           </Nav>
         </Navbar.Collapse>

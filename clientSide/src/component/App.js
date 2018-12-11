@@ -6,11 +6,12 @@ import AuthService from './AuthService';
 
 import SignUp from './SignUp';
 import TopNav from './TopNav';
+import BotNav from './BotNav';
 import Error from './Error';
 import Login from './Login';
 import Home from './Home';
 import Landing from './Landing';
-import ResourcePage from './ResourcePage'; 
+import ResourcePage from './ResourcePage';
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class App extends Component {
 	          <Route exact path="/" component={Landing} />
             <Route component={Error} />
           </Switch>
-
+		      <BotNav/>
         </div>
       </BrowserRouter>
     );
