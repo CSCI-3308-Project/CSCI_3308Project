@@ -1,5 +1,5 @@
-Study Buddies
-======================
+# Study Buddies
+
 ### About 
 Study Buddies is dedicated to bettering the lives of CU Boulder CSCI students. First, users can either login into an existing account or create a new account. When creating a new account, users are able to choose which courses they are currently taking. Then, users can post the location that they are at and what they are working on for a specific course. After, they can email other people working on similar assignments to potentially meet up with them and study together. 
 ### Requirements 
