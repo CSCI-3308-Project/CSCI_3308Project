@@ -12,3 +12,10 @@ You will need to do the following if you would like our application to work on y
 #### **_A much quicker and easier alternative is to visit our Heroku deployment of our application_**
 ### Deployment 
 https://study-buddies-app.herokuapp.com/
+### Authors
+* **Justin Adkins**
+* **Parikshit Bhetwal** 
+* **Jamison McGinley** 
+* **Jennifer Gurtler**
+* **Shania Roy** 
+* **Julien Rumsey** 
