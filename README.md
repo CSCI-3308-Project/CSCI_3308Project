@@ -9,6 +9,6 @@ You will need to do the following if you would like our application to work on y
 3) create an empty "studybuddies" database in PostgreSQL
 3) ```knex migrate:latest``` in serverSide directory 
 4) ```knex seed:run``` in serverSide directory 
-#### A much quicker and easier alternative is to visit our Heroku deployment of our application 
-### Heroku App Deployment 
+#### **__A much quicker and easier alternative is to visit our Heroku deployment of our application__**
+### Deployment 
 https://study-buddies-app.herokuapp.com/
