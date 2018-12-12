@@ -14,7 +14,7 @@ You will need to do the following if you would like our application to work on y
 https://study-buddies-app.herokuapp.com/
 ## Authors
 * **Justin Adkins**
-* **Parikshit Bhetwal** 
+* **Parikshit Bhetwal** - [GitHub](https://github.com/PurpleBooth)
 * **Jamison McGinley** 
 * **Jennifer Gurtler**
 * **Shania Roy** 
