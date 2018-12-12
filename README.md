@@ -1,6 +1,14 @@
 Study Buddies
 ======================
-## About 
+### About 
 Study Buddies is dedicated to bettering the lives of CU Boulder CSCI students. Using this application, users can post the location they are at and what they are working on for a specific class. Then, they can email other people working on similar assignments to potentially meet up with them and study together. 
+### Requirements 
+You will need to do the following if you would like our application to work on your location machine: 
+1) "npm install" in serverSide directory 
+2) "npm install" in clientSide directory 
+#### 3) create a "studybuddies" database in PostgreSQL
+3) "knex migrate:latest" in serverSide directory 
+4) "knex seed:run" in clientSide directory 
+#### Alternatively (and easier) you can visit our Heroku deployment of our application 
 ### Heroku App Deployment 
 https://study-buddies-app.herokuapp.com/
