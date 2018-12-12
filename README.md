@@ -22,7 +22,7 @@ You will need to do the following if you would like our application to work on y
 6) serverSide/data/ includes all of the HTTP requests for user data 
 7) serverSide/db/ includes all of the code to create and seed tables within our databse as well as all of the seed data
 ## Deployment 
-https://study-buddies-app.herokuapp.com/__ 
+https://study-buddies-app.herokuapp.com/ <br />
 Note: If Heroku app delays with loading or gives you an error, this is because the application is in a sleep state. Reload the page after 30 seconds if this occurs. 
 ## Authors
 * **Justin Adkins** - [GitHub](https://github.com/jadkins89) 
