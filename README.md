@@ -13,9 +13,9 @@ You will need to do the following if you would like our application to work on y
 ## Deployment 
 https://study-buddies-app.herokuapp.com/
 ## Authors
-* **Justin Adkins**
-* **Parikshit Bhetwal** - [GitHub](https://github.com/PurpleBooth)
-* **Jamison McGinley** 
-* **Jennifer Gurtler**
-* **Shania Roy** 
-* **Julien Rumsey** 
+* **Justin Adkins** - [GitHub](https://github.com/jadkins89) 
+* **Parikshit Bhetwal** - [GitHub](https://github.com/pbhetwal)
+* **Jamison McGinley** - [GitHub](https://github.com/jamc3951) 
+* **Jennifer Gurtler** - [GitHub](https://github.com/jegu5171)
+* **Shania Roy** - [GitHub](https://github.com/shro5435)
+* **Julien Rumsey** - [GitHub](https://github.com/julienrumsey)
