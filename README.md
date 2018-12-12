@@ -7,8 +7,9 @@ You will need to do the following if you would like our application to work on y
 1) ```npm install``` in serverSide directory 
 2) ```npm install``` in clientSide directory 
 3) create an empty "studybuddies" database in PostgreSQL
-3) ```knex migrate:latest``` in serverSide directory 
-4) ```knex seed:run``` in serverSide directory 
+4) Within ```serverSide/knexfile.js``` change ```user: 'postgres'``` and  ```//password: ''``` to your credentials 
+5) ```knex migrate:latest``` in serverSide directory 
+6) ```knex seed:run``` in serverSide directory 
 ### **_A much quicker and easier alternative is to visit our Heroku deployment of our application_**
 ## Deployment 
 https://study-buddies-app.herokuapp.com/
